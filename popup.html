@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Set Page Color Popup</title>
+    <style>
+        .item1 { grid-area: topLeft; }
+        .item2 { 
+            grid-area: middle; 
+            font-size: 14px;
+            text-align: justify;
+        }
+        .item3 { grid-area: topRight; }
+        
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+            'topLeft middle middle middle middle middle middle middle topRight'
+            'topLeft middle middle middle middle middle middle middle topRight'
+            'topLeft middle middle middle middle middle middle middle topRight';
+            grid-gap: 2px;            
+            height: 300px;
+            width: 400px;
+            font-size: 30px;
+        }
+        .grid-container > div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <script src="popup.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="grid-container">
+        <button id="prevBtn" class="item1">Prev</button>
+        <div class="item2">
+            Bacon ipsum dolor amet pork shank spare ribs alcatra sirloin shoulder shankle biltong chuck picanha boudin porchetta. Tri-tip pork frankfurter cupim. Kielbasa pork belly corned beef shoulder, ribeye jowl turducken pig alcatra t-bone prosciutto. Jerky cupim prosciutto andouille pancetta venison cow shankle biltong turkey tongue kielbasa ball tip pork loin pork.
+        </div>
+        <button id="nextBtn" class="item3">Next</button>
+    </div>
+</body>
+</html>
