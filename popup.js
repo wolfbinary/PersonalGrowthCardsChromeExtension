@@ -8,18 +8,21 @@ class Popup{
         
         this.nextBtn = document.getElementById(`${nextBtnId}`);
         this.nextBtn.addEventListener("click", this.next);
+
+        this._dal = new Dal();
     }
-    fetchQuotes(){
-        
+    
+    get dal(){
+        return this._dal;
+    }
+
+    set dal(newDal){
+        this._dal = newDal;
     }
     
     previous(){
-        let url = chrome.runtime.getURL('data/quotes.json');
-        fetch(url)
-        .then((response) => response.json()) //assuming file contains json
-        .then((json) => {
-            alert(json.version);
-        });
+        this._dal = new Dal();
+        this._dal.fetchQuotes();
     }
 
     next(){
